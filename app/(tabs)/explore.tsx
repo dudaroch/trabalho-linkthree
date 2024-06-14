@@ -8,6 +8,8 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 import { LinearGradient } from 'expo-linear-gradient';
+import { useFonts } from 'expo-font';
+
 
 
 
