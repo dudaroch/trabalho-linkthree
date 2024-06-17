@@ -43,9 +43,9 @@ export default function HomeScreen() {
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText style={{fontFamily: 'Jost_400Regular', color: '#4E3072', fontSize: 18,}}>
-        Quer se manter atualizado sobre todas as nossas novidades, eventos e conteúdos exclusivos?
-        Não deixe de conferir a página ao lado, onde você encontrará os botões que te conectarão às nossas redes sociais.
-        Siga-nos para não perder nada do que está por vir e fazer parte da nossa comunidade virtual.
+        Quer se manter atualizado sobre todas as novidades, eventos e conteúdos exclusivos?
+        Não deixe de conferir a página ao lado, onde você encontrará os botões que te conectarão às minhas redes sociais.
+        Siga-me para não perder nada do que está por vir e fazer parte dessa comunidade virtual.
         </ThemedText>
       </ThemedView>
       <ThemedView style={{alignItems: 'center'}}>
