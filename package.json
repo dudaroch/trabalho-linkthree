@@ -15,7 +15,11 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@expo-google-fonts/josefin-sans": "^0.2.3",
+    "@expo-google-fonts/jost": "^0.2.3",
     "@expo-google-fonts/lexend-deca": "^0.2.3",
+    "@expo-google-fonts/marcellus": "^0.2.3",
+    "@expo-google-fonts/urbanist": "^0.2.3",
     "@expo/vector-icons": "^14.0.0",
     "@react-navigation/native": "^6.0.2",
     "expo": "~51.0.12",

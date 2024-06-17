@@ -170,11 +170,13 @@ const styles = StyleSheet.create({
   botao: {
     backgroundColor: '#F2E7FF',
         width: 345,
-        height: 50,
+        height: 45,
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 20,
         alignSelf: 'center',
         marginTop: 10,
+        borderWidth: 0.5,
+        borderColor: '#6B3F9F',
   }
 });
