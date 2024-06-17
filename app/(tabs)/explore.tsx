@@ -10,10 +10,28 @@ import { ThemedView } from '@/components/ThemedView';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useFonts } from 'expo-font';
 
+import { JosefinSans_300Light, JosefinSans_400Regular } from '@expo-google-fonts/josefin-sans';
+import {Marcellus_400Regular } from '@expo-google-fonts/marcellus';
+import {Jost_400Regular } from '@expo-google-fonts/jost';
+import {Urbanist_400Regular } from '@expo-google-fonts/urbanist';
+
 
 
 
 export default function TabTwoScreen() {
+
+  let [fontsLoaded, fontError] = useFonts({
+    Marcellus_400Regular,
+    JosefinSans_300Light,
+    JosefinSans_400Regular,
+    Jost_400Regular,
+    Urbanist_400Regular
+  });
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+
   const LinkedInlink = async () => {
     // Exemplo de uso
     const profileId = ""; // Substitua pelo ID do perfil desejado
@@ -89,63 +107,77 @@ export default function TabTwoScreen() {
       </ThemedView>
 
 
-      <TouchableOpacity  onPress={LinkedInlink} style={styles.botao}>
-          <ThemedView >
+      <TouchableOpacity  onPress={LinkedInlink} >
+          <ThemedView style={styles.botao} >
+          <Image
+                source={require("@/assets/images/linkedin.png")}
+                style={styles.imagembotao}
+          />
+          <ThemedView style={{marginLeft: 50,}}>
+            <ThemedText style={styles.texto}>LinkedIn</ThemedText>
           </ThemedView>
-          <ThemedView >
-            <ThemedText style={{ backgroundColor: '#F2E7FF'}}>LinkedIn</ThemedText>
           </ThemedView>
-          <ThemedView >
+      </TouchableOpacity>
+
+        <TouchableOpacity  onPress={GitHubLink}>
+          <ThemedView style={styles.botao} >
+          <Image
+                source={require("@/assets/images/github.png")}
+                style={styles.imagembotao}
+          />
+            <ThemedView style={{marginLeft: 52,}} >
+            <ThemedText style={styles.texto}>Github</ThemedText>
+            </ThemedView>
+          </ThemedView>
+          
+        </TouchableOpacity>
+
+        <TouchableOpacity  onPress={WhatsAppLink}> 
+          <ThemedView style={styles.botao}>
+          <Image
+                source={require("@/assets/images/whats.png")}
+                style={styles.imagembotao}
+          />
+            <ThemedView style={{marginLeft: 39,}}>
+            <ThemedText style={styles.texto}>WhatsApp</ThemedText>
+            </ThemedView>
+            
           </ThemedView>
         </TouchableOpacity>
 
-        <TouchableOpacity  onPress={GitHubLink} style={styles.botao}>
-          <ThemedView >
+        <TouchableOpacity  onPress={fazerChamada}>
+          <ThemedView style={styles.botao} >
+          <Image
+                source={require("@/assets/images/telefone.png")}
+                style={styles.imagembotao}
+          />
+          <ThemedView style={{marginLeft: 45,}} >
+            <ThemedText style={styles.texto}>Telefone</ThemedText>
           </ThemedView>
-          <ThemedView >
-            <ThemedText style={{ backgroundColor: '#F2E7FF'}}>Github</ThemedText>
-          </ThemedView>
-          <ThemedView >
-          </ThemedView>
-        </TouchableOpacity>
-
-        <TouchableOpacity  onPress={WhatsAppLink} style={styles.botao}>
-          <ThemedView >
-          </ThemedView>
-          <ThemedView >
-            <ThemedText style={{ backgroundColor: '#F2E7FF'}}>WhatsApp</ThemedText>
-          </ThemedView>
-          <ThemedView >
           </ThemedView>
         </TouchableOpacity>
 
-        <TouchableOpacity  onPress={fazerChamada} style={styles.botao}>
-          <ThemedView >
+        <TouchableOpacity>
+          <ThemedView style={styles.botao} >
+          <Image
+                source={require("@/assets/images/gmail.png")}
+                style={styles.imagembotao}
+          />
+          <ThemedView style={{marginLeft: 55,}} >
+            <ThemedText style={styles.texto}>Gmail</ThemedText>
           </ThemedView>
-          <ThemedView >
-            <ThemedText style={{ backgroundColor: '#F2E7FF'}}>Telefone</ThemedText>
-          </ThemedView>
-          <ThemedView >
-          </ThemedView>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.botao}>
-          <ThemedView >
-          </ThemedView>
-          <ThemedView >
-            <ThemedText style={{ backgroundColor: '#F2E7FF'}}>Gmail</ThemedText>
-          </ThemedView>
-          <ThemedView >
           </ThemedView>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={InstagramLink} style={styles.botao}>
-          <ThemedView >
+        <TouchableOpacity onPress={InstagramLink}>
+          <ThemedView style={styles.botao}>
+          <Image
+                source={require("@/assets/images/instagram.png")}
+                style={styles.imagembotao}
+          />
+          <ThemedView style={{marginLeft: 45,}}>
+            <ThemedText style={styles.texto}>Instagram</ThemedText>
           </ThemedView>
-          <ThemedView >
-            <ThemedText style={{ backgroundColor: '#F2E7FF'}}>Instagram</ThemedText>
-          </ThemedView>
-          <ThemedView >
           </ThemedView>
         </TouchableOpacity>
 
@@ -169,14 +201,29 @@ const styles = StyleSheet.create({
   },
   botao: {
     backgroundColor: '#F2E7FF',
-        width: 345,
-        height: 45,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 20,
-        alignSelf: 'center',
-        marginTop: 10,
-        borderWidth: 0.5,
-        borderColor: '#6B3F9F',
+    width: 300,
+    height: 50,
+    alignItems: 'center',
+   
+    borderRadius: 20,
+    alignSelf: 'center',
+    marginTop: 10,
+    borderWidth: 0.5,
+    borderColor: '#6B3F9F',
+    flexDirection: 'row',
+  },
+  imagembotao: {
+    height: 42,
+    width: 42,
+    marginRight: 10,
+    backgroundColor: '#F2E7FF',
+    justifyContent: 'flex-start',
+    marginLeft: 20,
+  },
+  texto: {
+    backgroundColor: '#F2E7FF',
+    fontFamily: 'Jost_400Regular',
+    fontSize: 19,
+    color: '#6B3F9F'
   }
 });

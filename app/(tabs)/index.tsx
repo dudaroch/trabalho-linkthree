@@ -45,7 +45,7 @@ export default function HomeScreen() {
         <ThemedText style={{fontFamily: 'Jost_400Regular', color: '#4E3072', fontSize: 18,}}>
         Quer se manter atualizado sobre todas as nossas novidades, eventos e conteúdos exclusivos?
         Não deixe de conferir a página ao lado, onde você encontrará os botões que te conectarão às nossas redes sociais.
-        Siga-nos para não perder nada do que está por vir e fazer parte da nossa comunidade virtual. Estamos esperando por você do outro lado!
+        Siga-nos para não perder nada do que está por vir e fazer parte da nossa comunidade virtual.
         </ThemedText>
       </ThemedView>
       <ThemedView style={{alignItems: 'center'}}>
