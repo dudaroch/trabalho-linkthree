@@ -36,14 +36,14 @@ export default function TabTwoScreen() {
     // Exemplo de uso
     const profileId = ""; // Substitua pelo ID do perfil desejado
     try {
-      const linkedInUrl = `linkedin://profile/${profileId}`;
+      const linkedInUrl = `linkedin://profile/maria-eduarda-rocha-4b6618314/`;
       const isInstalled = await Linking.canOpenURL(linkedInUrl);
 
       if (isInstalled) {
         await Linking.openURL(linkedInUrl);
       } else {
         // Se o aplicativo não estiver instalado, redirecione para o perfil na web
-        const webUrl = `https://www.linkedin.com/in/${profileId}`;
+        const webUrl = `https://www.linkedin.com/in/maria-eduarda-rocha-4b6618314/`;
         await Linking.openURL(webUrl);
       }
     } catch (error) {
@@ -95,15 +95,33 @@ export default function TabTwoScreen() {
     }
   };
 
+  const AbrirGmailApp = async () => {
+    const email = "dudarochapedro@gmail.com";
+    const subject = "Assunto importante! Me dá MB Grazi.";
+    const body = "Olá, tudo bem?";
+  
+    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  
+    try {
+      await Linking.openURL(mailtoUrl);
+    } catch (error) {
+      console.error("Erro ao abrir o cliente de e-mail:", error);
+    }
+  };
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#F2E7FF', dark: '#353636' }}
-      headerImage={<Ionicons size={310} name="code-slash" style={styles.headerImage} />}>
+      headerImage={<Image
+        source={require('@/assets/images/minhafoto.png')}
+        style={styles.reactLogo}
+      />}>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Redes Sociais</ThemedText>
+        <ThemedText type="title" style={{fontFamily: 'Jost_400Regular', color: '#4E3072', padding: 3, marginLeft: 80,}}>
+          Redes Sociais!
+        </ThemedText>
       </ThemedView>
       <ThemedView>
-        <ThemedText>3° Informática</ThemedText>
+        <ThemedText style={{marginLeft: 25, fontFamily: 'Jost_400Regular', fontSize: 18, color: '#4E3072'}}>Maria Eduarda S. Rocha, 3° Informática </ThemedText>
       </ThemedView>
 
 
@@ -157,14 +175,14 @@ export default function TabTwoScreen() {
           </ThemedView>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={AbrirGmailApp} >
           <ThemedView style={styles.botao} >
           <Image
                 source={require("@/assets/images/gmail.png")}
                 style={styles.imagembotao}
           />
           <ThemedView style={{marginLeft: 55,}} >
-            <ThemedText style={styles.texto}>Gmail</ThemedText>
+            <ThemedText style={styles.texto}>E-mail</ThemedText>
           </ThemedView>
           </ThemedView>
         </TouchableOpacity>
@@ -225,5 +243,12 @@ const styles = StyleSheet.create({
     fontFamily: 'Jost_400Regular',
     fontSize: 19,
     color: '#6B3F9F'
-  }
+  },
+  reactLogo: {
+    height: 200,
+    width: 200,
+    bottom: 10,
+    alignSelf: 'center',
+    position: 'absolute',
+  },
 });
