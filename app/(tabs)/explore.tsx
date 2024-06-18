@@ -95,7 +95,7 @@ export default function TabTwoScreen() {
     }
   };
 
-  const AbrirGmailApp = async () => {
+  const AbrirEmailApp = async () => {
     const email = "dudarochapedro@gmail.com";
     const subject = "Assunto importante! Me dá MB Grazi.";
     const body = "Olá, tudo bem?";
@@ -175,7 +175,7 @@ export default function TabTwoScreen() {
           </ThemedView>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={AbrirGmailApp} >
+        <TouchableOpacity onPress={AbrirEmailApp} >
           <ThemedView style={styles.botao} >
           <Image
                 source={require("@/assets/images/gmail.png")}

@@ -38,11 +38,11 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-      <ThemedText type='title' style={{fontFamily: 'Jost_400Regular', color: '#4E3072', padding: 3,}}>Bem Vindo!</ThemedText>
+      <ThemedText type='title' style={{fontFamily: 'Jost_400Regular', color: '#4E3072', padding: 3,}}>Bem-Vindo!</ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText style={{fontFamily: 'Jost_400Regular', color: '#4E3072', fontSize: 18,}}>
+        <ThemedText style={{fontFamily: 'Jost_400Regular', color: '#4E3072', fontSize: 18, textAlign: 'justify'}}>
         Quer se manter atualizado sobre todas as novidades, eventos e conteúdos exclusivos?
         Não deixe de conferir a página ao lado, onde você encontrará os botões que te conectarão às minhas redes sociais.
         Siga-me para não perder nada do que está por vir e fazer parte dessa comunidade virtual.
